@@ -1,0 +1,22 @@
+body {
+    background-color: darkseagreen;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+}
+
+
+.c1 {
+    position: fixed;
+    background-color: white;
+    margin: 100px 500px 500px 300px;
+    width: 300px;
+    height: 300px;
+}
+
+.hide {
+    display: none;
+}

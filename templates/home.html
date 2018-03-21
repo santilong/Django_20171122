@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/testcss.css"/>
+</head>
+<body>
+    <div style="position: relative">
+        <div class="c1 hide">
+            <form action="home.html" method="POST">
+            <div><input type="text" name="user" placeholder="请输入用户名"/></div>
+            <div><input type="text" name="gender" placeholder="请输入性别"/></div>
+            <div><input type="text" name="email" placeholder="请输入邮箱"/></div>
+            <input type="submit" value="提交"/>
+            <input type="button" value="关闭" id="i1">
+            </form>
+        </div>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>邮箱</th>
+                </tr>
+            </thead>
+            {% for row in user_list %}
+            <tr>
+                <td>{{ row.user }}</td>
+                <td>{{ row.gender }}</td>
+                <td>{{ row.email }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div>
+        <input type="button" value="新增" id="i2">
+    </div>
+    <script src="/static/jquery-2.1.4.min.js"></script>
+    <script>
+        $('.c1').delegate(':button','click',function () {
+            $('.c1').toggleClass('hide');
+        })
+        $('#i2').click(function () {
+            $('.c1').toggleClass('hide');
+        })
+    </script>
+</body>
+</html>
